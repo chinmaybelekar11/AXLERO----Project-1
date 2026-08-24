@@ -3,8 +3,7 @@
 ## Status
 - ✅ Week 1: Kafka Setup - COMPLETE
 - ✅ Week 2: Stream Processing - COMPLETE
-- ⏳ Week 3: State Management
-- ⏳ Week 4: Monitoring 
+
 
 ## What's Inside
 
