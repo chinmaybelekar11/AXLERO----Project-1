@@ -1,3 +1,0 @@
-confluent-kafka==2.15.0
-python-rocksdb==0.31.0
-prometheus-client==0.20.0
