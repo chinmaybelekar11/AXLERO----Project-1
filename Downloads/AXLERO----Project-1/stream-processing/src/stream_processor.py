@@ -1,3 +1,7 @@
+# Week 3 - Stream Processing Validation
+# Implemented and validated truck telemetry stream processing.
+# Tested temperature filtering (>60°C), rolling average calculation,
+# and output generation for truck-averages.
 from confluent_kafka import Consumer, Producer
 import json
 from datetime import datetime
