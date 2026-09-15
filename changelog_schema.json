@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TruckStateChangelogEvent",
+  "description": "Value schema for messages on truck-state-changelog. Kafka-side contract only — the RocksDB team owns the 'state' object's exact shape and may extend it; this defines the minimum expected structure. Message key is truck_id (string), same as truck-telemetry, so per-truck state stays co-located on one partition.",
+  "type": "object",
+  "required": ["truck_id", "window", "state", "timestamp"],
+  "properties": {
+    "truck_id": {
+      "type": "string",
+      "examples": ["TRUCK-001"]
+    },
+    "window": {
+      "type": "string",
+      "description": "The 5-minute window this state snapshot belongs to.",
+      "examples": ["10:00-10:05"]
+    },
+    "state": {
+      "type": "object",
+      "description": "Owned by the RocksDB / Stream Processing team. Minimum expected fields shown below for a rolling-average use case.",
+      "properties": {
+        "sum": { "type": "number" },
+        "count": { "type": "integer" }
+      }
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": true
+}

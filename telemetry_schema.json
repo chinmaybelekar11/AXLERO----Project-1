@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TruckTelemetryEvent",
+  "description": "Value schema for messages published to the truck-telemetry Kafka topic. Message key is the truck_id (string).",
+  "type": "object",
+  "required": ["truck_id", "temperature", "timestamp"],
+  "properties": {
+    "truck_id": {
+      "type": "string",
+      "description": "Unique truck identifier. Used as the Kafka message key.",
+      "examples": ["TRUCK-001"]
+    },
+    "temperature": {
+      "type": "number",
+      "description": "Sensor temperature reading in Celsius.",
+      "examples": [27.5]
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO-8601 UTC timestamp of the reading.",
+      "examples": ["2026-09-15T10:30:00"]
+    }
+  },
+  "additionalProperties": false
+}
